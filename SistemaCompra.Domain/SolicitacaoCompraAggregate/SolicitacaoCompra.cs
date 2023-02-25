@@ -4,6 +4,7 @@ using SistemaCompra.Domain.ProdutoAggregate;
 using SistemaCompra.Domain.SolicitacaoCompraAggregate.Events;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
 {
@@ -31,12 +32,14 @@ namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
 
         public void AdicionarItem(Produto produto, int qtde)
         {
-            if (qtde <= 0 || produto is null) throw new BusinessRuleException("Quantidade de itens deve ser maior que 0");
+            if (qtde <= 0 || produto is null) throw new BusinessRuleException("A solicitação de compra deve possuir itens!");
             Itens.Add(new Item(produto, qtde));
         }
 
         public void RegistrarCompra(IEnumerable<Item> itens)
         {
+            if(!itens.Any()) throw new BusinessRuleException("A solicitação de compra deve possuir itens!");
+
             foreach (var item in itens)
             {
                 var a = TotalGeral.Add(item.Subtotal);

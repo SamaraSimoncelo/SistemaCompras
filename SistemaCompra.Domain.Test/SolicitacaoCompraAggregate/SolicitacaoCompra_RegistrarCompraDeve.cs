@@ -12,7 +12,7 @@ namespace SistemaCompra.Domain.Test.SolicitacaoCompraAggregate
         public void DefinirPrazo30DiasAoComprarMais50mil()
         {
             //Dado
-            var solicitacao = new SolicitacaoCompra("rodrigoasth", "rodrigoasth");
+            var solicitacao = new SolicitacaoCompra("rodrigoasth", "rodrigoasth", 60);
             var itens = new List<Item>();
             var produto = new Produto("Cedro", "Transversal 3/3", Categoria.Madeira.ToString(), 1001);
             itens.Add(new Item(produto, 50));
@@ -21,14 +21,14 @@ namespace SistemaCompra.Domain.Test.SolicitacaoCompraAggregate
             solicitacao.RegistrarCompra(itens);
 
             //Então
-            //Assert.Equal(30, solicitacao.CondicaoPagamento.Valor);
+            Assert.Equal(30, solicitacao.CondicaoPagamento.Valor);
         }
 
         [Fact]
         public void NotificarErroQuandoNaoInformarItensCompra()
         {
             //Dado
-            var solicitacao = new SolicitacaoCompra("rodrigoasth", "rodrigoasth");
+            var solicitacao = new SolicitacaoCompra("rodrigoasth", "rodrigoasth", 30);
             var itens = new List<Item>();
 
             //Quando 
