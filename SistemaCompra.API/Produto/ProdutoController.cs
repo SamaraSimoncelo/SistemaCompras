@@ -42,7 +42,7 @@ namespace SistemaCompra.API.Produto
         [ProducesResponseType(500)]
         public IActionResult AtualizarPreco([FromBody] AtualizarPrecoCommand atualizarPrecoCommand)
         {
-             _mediator.Send(atualizarPrecoCommand);
+            _mediator.Send(atualizarPrecoCommand);
             return Ok();
 
         }

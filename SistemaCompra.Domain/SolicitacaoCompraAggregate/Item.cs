@@ -1,8 +1,6 @@
 ﻿using SistemaCompra.Domain.Core.Model;
 using SistemaCompra.Domain.ProdutoAggregate;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
 {
