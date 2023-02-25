@@ -1,10 +1,8 @@
 ﻿using MediatR;
 using SistemaCompra.Domain.ProdutoAggregate;
 using SistemaCompra.Infra.Data.UoW;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
-using ProdutoAgg = SistemaCompra.Domain.ProdutoAggregate;
 
 namespace SistemaCompra.Application.Produto.Command.AtualizarPreco
 {
@@ -12,9 +10,9 @@ namespace SistemaCompra.Application.Produto.Command.AtualizarPreco
     {
         private readonly IProdutoRepository _produtoRepository;
 
-        public AtualizarPrecoCommandHandler(ProdutoAgg.IProdutoRepository produtoRepository, IUnitOfWork uow, IMediator mediator) : base(uow, mediator)
+        public AtualizarPrecoCommandHandler(IProdutoRepository produtoRepository, IUnitOfWork uow, IMediator mediator) : base(uow, mediator)
         {
-            this._produtoRepository = produtoRepository;
+            _produtoRepository = produtoRepository;
         }
         public Task<bool> Handle(AtualizarPrecoCommand request, CancellationToken cancellationToken)
         {

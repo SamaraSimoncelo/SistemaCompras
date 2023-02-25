@@ -2,7 +2,6 @@
 using SistemaCompra.Domain.Core.Model;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
 {
@@ -16,7 +15,7 @@ namespace SistemaCompra.Domain.SolicitacaoCompraAggregate
         {
             if (string.IsNullOrWhiteSpace(nome)) throw new ArgumentNullException(nameof(nome));
             if (nome.Length < 5) throw new BusinessRuleException("Nome de usuário deve possuir pelo menos 8 caracteres.");
-            
+
             Nome = nome;
         }
 

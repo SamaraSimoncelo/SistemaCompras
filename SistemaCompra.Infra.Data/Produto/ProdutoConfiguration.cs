@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 using ProdutoAgg = SistemaCompra.Domain.ProdutoAggregate;
 
 namespace SistemaCompra.Infra.Data.Produto

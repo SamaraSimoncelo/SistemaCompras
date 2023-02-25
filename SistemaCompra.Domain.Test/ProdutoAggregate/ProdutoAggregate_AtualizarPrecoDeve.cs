@@ -1,8 +1,5 @@
 ﻿using SistemaCompra.Domain.Core;
 using SistemaCompra.Domain.ProdutoAggregate;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace SistemaCompra.Domain.Test.ProdutoAggregate
